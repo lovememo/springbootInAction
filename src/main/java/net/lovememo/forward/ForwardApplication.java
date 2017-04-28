@@ -15,6 +15,7 @@ public class ForwardApplication {
     String index() {
         return "hello spring boot";
     }
+    
     public static void main(String[] args) {
         SpringApplication.run(ForwardApplication.class, args);
     }
