@@ -1,5 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -82,13 +83,16 @@
                 
                 <p>This is likely to be caused by one of the following</p>
                 <ul>
+                    <li>
+                        <span th:text="${errorMsg}"></span>
+                    </li>
                     <li>The author of the page has intentionally limited access to it.</li>
                     <li>The computer on which the page is stored is unreachable.</li>
-                    <li>You like this page.</li>
+                    <!-- <li>You like this page.</li>-->
                 </ul>
                 <br />
-                <button class="stdbtn btn_black" onclick="history.back()">Go Back to Previous Page</button> &nbsp; 
-                <button onclick="location.href='dashboard.html'" class="stdbtn btn_orange">Go Back to Dashboard</button>
+                <!--<button class="stdbtn btn_black" onclick="history.back()">Go Back to Previous Page</button> &nbsp;
+                <button onclick="location.href='dashboard.html'" class="stdbtn btn_orange">Go Back to Dashboard</button>-->
             </div><!--errorcontent-->
         </div><!--errorwrapper-->
     </div>    

@@ -1,7 +1,9 @@
 package net.lovememo.forward.simulator.service;
 
+import com.sun.xml.internal.bind.v2.TODO;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 /**
  * Created by lovememo on 17-5-2.
@@ -14,4 +16,5 @@ public interface ISimulatorService {
      * @return
      */
     public boolean getOpenFlag();
+
 }
