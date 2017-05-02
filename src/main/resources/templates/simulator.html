@@ -1,0 +1,17 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>手工处理页面</title>
+        <meta http-equiv="Content-Type" content="text/html;charset=GBK"/>
+
+    </head>
+    <div>
+        openFlag value: <span th:text="${openFlag}"></span>
+        <br/>
+    </div>
+    <div th:if="${openFlag}">
+        <h1>模拟器开启</h1>
+    </div>
+    <div th:if="${not openFlag}">
+        <h1>404 page not found</h1>
+    </div>
+</html>
