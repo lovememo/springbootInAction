@@ -1,3 +1,43 @@
+function removeMenuCurrentClass() {
+    jQuery("#vernav").find("li").each(function(i, el) {
+        jQuery(el).removeClass("current");
+    })
+}
+
+function iframeSubmitToNewPage(url, menuLiAElement) {
+    removeMenuCurrentClass();
+    jQuery(menuLiAElement).parent().addClass("current");
+//    alert("hih")
+}
+
+/**
+*全局设置单击
+*/
+function onGlobalSettingsClicked(menuLiAElement) {
+    iframeSubmitToNewPage("", menuLiAElement);
+}
+
+/**
+*联机接口联调
+*/
+function onRealTimeInterfaceClicked(menuLiAElement) {
+    iframeSubmitToNewPage("", menuLiAElement);
+}
+
+/**
+* 文件接口联调
+*/
+function onFileInterfaceClicked(menuLiAElement) {
+    iframeSubmitToNewPage("", menuLiAElement);
+}
+
+/**
+* 日志界面查询
+*/
+function onLogViewClicked(menuLiAElement) {
+    iframeSubmitToNewPage("", menuLiAElement);
+}
+
 jQuery(document).ready(function(){
 	
 		jQuery('#overviewselect, input:checkbox').uniform();
