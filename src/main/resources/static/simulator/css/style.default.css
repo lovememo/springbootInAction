@@ -528,6 +528,7 @@ body.withmenucoll2 { background-position: 35px 0; } /* with menu style 2 in coll
 
 
 .centercontent { margin-left: 231px; position: relative; }
+.centercontentiframe {margin-left: 5px; position: relative; }
 .centercontent .pagetitle { margin: 0 20px 10px 20px; }
 .centercontent .pagedesc { margin: 0 20px; }
 .centercontent .hornav { padding: 0 20px; }

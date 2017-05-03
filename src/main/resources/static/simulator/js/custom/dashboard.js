@@ -1,3 +1,10 @@
+function changeFrameHeight(){
+    var ifm= document.getElementById("centercontent");
+//    ifm.height=document.documentElement.clientHeight;
+    ifm.height = 720;
+    ifm.width = jQuery(ifm).parent().width();
+}
+
 function removeMenuCurrentClass() {
     jQuery("#vernav").find("li").each(function(i, el) {
         jQuery(el).removeClass("current");
@@ -7,6 +14,8 @@ function removeMenuCurrentClass() {
 function iframeSubmitToNewPage(url, menuLiAElement) {
     removeMenuCurrentClass();
     jQuery(menuLiAElement).parent().addClass("current");
+    jQuery("#centercontent").attr("src", url);
+
 //    alert("hih")
 }
 
@@ -14,28 +23,28 @@ function iframeSubmitToNewPage(url, menuLiAElement) {
 *全局设置单击
 */
 function onGlobalSettingsClicked(menuLiAElement) {
-    iframeSubmitToNewPage("", menuLiAElement);
+    iframeSubmitToNewPage("/simulator/globalsettings.html", menuLiAElement);
 }
 
 /**
 *联机接口联调
 */
 function onRealTimeInterfaceClicked(menuLiAElement) {
-    iframeSubmitToNewPage("", menuLiAElement);
+    iframeSubmitToNewPage("/simulator/realtimeinterface.html", menuLiAElement);
 }
 
 /**
 * 文件接口联调
 */
 function onFileInterfaceClicked(menuLiAElement) {
-    iframeSubmitToNewPage("", menuLiAElement);
+    iframeSubmitToNewPage("/simulator/fileinterface.html", menuLiAElement);
 }
 
 /**
 * 日志界面查询
 */
 function onLogViewClicked(menuLiAElement) {
-    iframeSubmitToNewPage("", menuLiAElement);
+    iframeSubmitToNewPage("/simulator/logmng.html", menuLiAElement);
 }
 
 jQuery(document).ready(function(){
@@ -137,7 +146,7 @@ jQuery(document).ready(function(){
 	///// ON RESIZE WINDOW /////
 	jQuery(window).resize(function(){
 		rearrangeShortcuts();
+		changeFrameHeight();
 	});
-
 
 });
