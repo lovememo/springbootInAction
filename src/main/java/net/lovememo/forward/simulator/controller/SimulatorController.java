@@ -159,18 +159,24 @@ public class SimulatorController {
     public String globalSettings() {
         return "simulator/globalsettings";
     }
+
     @RequestMapping(value = "/simulator/logmng.html")
     public String logMng() {
         return "simulator/logmng";
     }
+
     @RequestMapping(value = "/simulator/realtimeinterface.html")
     public String realTimeInterface() {
         return "simulator/realtimeinterface";
     }
+
     @RequestMapping(value = "/simulator/wizard.html")
     public String wizard() {
         return "simulator/wizard";
     }
 
-
+    @RequestMapping(value = "/simulator/templateconfig.html")
+    public String templateConfig() {
+        return "simulator/templateconfig";
+    }
 }

@@ -74,12 +74,14 @@
             </li>-->
 
             <li><a href="#" onclick="onLogViewClicked(this)">日志查看</a></li>
+            <li><a href="#" onclick="onTemplateConfig(this)">接口模板配置</a></li>
+            <li><button class="stdbtn btn_blue" onclick="debugNotification()" type="submit">debug </button></li>
         </ul>
       <!--  <a class="togglemenu"></a>-->
         <br/><br/>
     </div><!--leftmenu-->
 
-    <div class="centercontent">
+    <div id="centercontentdiv" class="centercontent">
 
 
         <iframe id="centercontent" src="/simulator/globalsettings.html" onload="changeFrameHeight()"/>

@@ -1,3 +1,26 @@
+function notifyByTips(message) {
+    var divHtml = "<div id=\"GLOBAL_MESSAGE_BOX\" class=\"notibar announcement\">"
+        + "<a  shape=\"rect\" onclick=\"removeNotifyDiv()\" class=\"close\"></a>"
+        + "<p>"
+        + message
+        + "</p>"
+        + "</div>";
+    var $div = jQuery("#GLOBAL_MESSAGE_BOX");
+    if(0 != $div.length) {
+        $div.remove();
+    }
+    $div = jQuery(divHtml);
+    jQuery("#centercontent").before($div);
+}
+
+function removeNotifyDiv() {
+    jQuery("#GLOBAL_MESSAGE_BOX").remove();
+}
+
+function debugNotification(message) {
+    notifyByTips("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX测试 TEST！");
+}
+
 function changeFrameHeight(){
     var ifm= document.getElementById("centercontent");
 //    ifm.height=document.documentElement.clientHeight;
@@ -45,6 +68,10 @@ function onFileInterfaceClicked(menuLiAElement) {
 */
 function onLogViewClicked(menuLiAElement) {
     iframeSubmitToNewPage("/simulator/logmng.html", menuLiAElement);
+}
+
+function onTemplateConfig(menuLiAElement) {
+    iframeSubmitToNewPage("/simulator/templateconfig.html", menuLiAElement);
 }
 
 jQuery(document).ready(function(){
