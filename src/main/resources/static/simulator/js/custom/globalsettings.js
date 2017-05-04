@@ -1,9 +1,13 @@
 function onStartServerBtnClicked() {
-    alert(1);
+    alert("start server");
 }
 
 function onStopServerBtnClicked() {
-    alert(2);
+    alert("stop server");
+}
+
+function onMannualListSetBtnClicked() {
+    alert("mannual list set!")
 }
 
 jQuery(document).ready(function(){
