@@ -1,4 +1,4 @@
-package net.lovememo.forward.websocket.model;
+package net.lovememo.forward.simulator.model;
 
 /**
  * Created by lovememo on 17-4-30.

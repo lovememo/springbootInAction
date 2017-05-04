@@ -1,3 +1,32 @@
+/* WebSocket 代码开始*/
+var stompClient = null;
+
+function onWebSocketMessageReceived(response) {
+    notifyByTips(JSON.parse(response.body).responseMessage);
+}
+
+function webSocketConnect() {
+    var socket = new SockJS('/endpointLovememo');
+    stompClient = Stomp.over(socket);
+    stompClient.connect({}, function (frame) {
+        stompClient.subscribe('/topic/notification', function (response) {
+            onWebSocketMessageReceived(response);
+        });
+    });
+}
+
+function webSocketDisconnect() {
+    if (stompClient != null) {
+        stompClient.disconnect();
+    }
+    notifyByTips('Disconnected');
+}
+
+function webSocketSendMessageToServer(name) {
+    stompClient.send("/welcome", {}, JSON.stringify({'name': name}));
+}
+/* WebSocket 代码结束*/
+
 function notifyByTips(message) {
     var divHtml = "<div id=\"GLOBAL_MESSAGE_BOX\" class=\"notibar announcement\">"
         + "<a  shape=\"rect\" onclick=\"removeNotifyDiv()\" class=\"close\"></a>"
@@ -18,13 +47,14 @@ function removeNotifyDiv() {
 }
 
 function debugNotification(message) {
-    notifyByTips("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX测试 TEST！");
+    //notifyByTips("XXXXXXXXXXXXXXXXX测试 TEST！");
+    webSocketSendMessageToServer("init web socket test");
 }
 
 function changeFrameHeight(){
     var ifm= document.getElementById("centercontent");
-//    ifm.height=document.documentElement.clientHeight;
-    ifm.height = 720;
+    //ifm.height=document.documentElement.clientHeight;
+    ifm.height = 700;
     ifm.width = jQuery(ifm).parent().width();
 }
 
@@ -106,7 +136,7 @@ jQuery(document).ready(function(){
 		}
 	
 			
-		var plot = jQuery.plot(jQuery("#chartplace"),
+/*		var plot = jQuery.plot(jQuery("#chartplace"),
 			   [ { data: flash, label: "Flash(x)", color: "#069"}, { data: html5, label: "HTML5(x)", color: "#FF6600"} ], {
 				   series: {
 					   lines: { show: true, fill: true, fillColor: { colors: [ { opacity: 0.05 }, { opacity: 0.15 } ] } },
@@ -115,7 +145,7 @@ jQuery(document).ready(function(){
 				   legend: { position: 'nw'},
 				   grid: { hoverable: true, clickable: true, borderColor: '#ccc', borderWidth: 1, labelMargin: 10 },
 				   yaxis: { min: 0, max: 15 }
-				 });
+				 });*/
 		
 		var previousPoint = null;
 		jQuery("#chartplace").bind("plothover", function (event, pos, item) {
@@ -141,12 +171,12 @@ jQuery(document).ready(function(){
 		
 		});
 		
-		jQuery("#chartplace").bind("plotclick", function (event, pos, item) {
+/*		jQuery("#chartplace").bind("plotclick", function (event, pos, item) {
 			if (item) {
 				jQuery("#clickdata").text("You clicked point " + item.dataIndex + " in " + item.series.label + ".");
 				plot.highlight(item.series, item.datapoint);
 			}
-		});
+		});*/
 		
 		
 	///// SWITCHING LIST FROM 3 COLUMNS TO 2 COLUMN LIST /////
@@ -175,5 +205,8 @@ jQuery(document).ready(function(){
 		rearrangeShortcuts();
 		changeFrameHeight();
 	});
+
+	webSocketConnect();
+
 
 });

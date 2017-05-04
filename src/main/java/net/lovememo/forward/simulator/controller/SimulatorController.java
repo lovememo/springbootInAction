@@ -29,26 +29,73 @@ public class SimulatorController {
         }
     }
 
+    @RequestMapping(value = "/simulator/dashboard.html")
+    public String dashboard() {
+        return "simulator/dashboard";
+    }
+
+    @RequestMapping(value = "/simulator/forbidden.html")
+    public String forbidden() {
+        return "simulator/forbidden";
+    }
+
+    @RequestMapping(value = "/simulator/internal.html")
+    public String internal() {
+        return "simulator/internal";
+    }
+
+    @RequestMapping(value = "/simulator/index.html")
+    public String index() {
+        return "simulator/index";
+    }
+
+    @RequestMapping(value = "/simulator/notfound.html")
+    public String notfound() {
+        return "simulator/notfound";
+    }
+
+    @RequestMapping(value = "/simulator/offline.html")
+    public String offline() {
+        return "simulator/offline";
+    }
+
+    @RequestMapping(value = "/simulator/fileinterface.html")
+    public String fileInterface() {
+        return "simulator/fileinterface";
+    }
+
+    @RequestMapping(value = "/simulator/globalsettings.html")
+    public String globalSettings() {
+        return "simulator/globalsettings";
+    }
+
+    @RequestMapping(value = "/simulator/logmng.html")
+    public String logMng() {
+        return "simulator/logmng";
+    }
+
+    @RequestMapping(value = "/simulator/realtimeinterface.html")
+    public String realTimeInterface() {
+        return "simulator/realtimeinterface";
+    }
+
+    @RequestMapping(value = "/simulator/templateconfig.html")
+    public String templateConfig() {
+        return "simulator/templateconfig";
+    }
+/*
+
+    @RequestMapping(value = "/simulator/forms.html")
+    public String forms() {
+        return "simulator/forms";
+    }
+
     //one html file one request
     @RequestMapping(value = "/simulator/ajax/notifications.html")
     public String notifications() {
         return "simulator/ajax/notifications";
     }
 
-    @RequestMapping(value = "/simulator/buttons.html")
-    public String buttons() {
-        return "simulator/buttons";
-    }
-
-    @RequestMapping(value = "/simulator/calendar.html")
-    public String calendar() {
-        return "simulator/calendar";
-    }
-
-    @RequestMapping(value = "/simulator/dashboard.html")
-    public String dashboard() {
-        return "simulator/dashboard";
-    }
 
     @RequestMapping(value = "/simulator/editor.html")
     public String editor() {
@@ -60,26 +107,15 @@ public class SimulatorController {
         return "simulator/elements";
     }
 
-    @RequestMapping(value = "/simulator/forbidden.html")
-    public String forbidden() {
-        return "simulator/forbidden";
+    @RequestMapping(value = "/simulator/buttons.html")
+    public String buttons() {
+        return "simulator/buttons";
     }
 
-    @RequestMapping(value = "/simulator/forms.html")
-    public String forms() {
-        return "simulator/forms";
+    @RequestMapping(value = "/simulator/calendar.html")
+    public String calendar() {
+        return "simulator/calendar";
     }
-
-    @RequestMapping(value = "/simulator/index.html")
-    public String index() {
-        return "simulator/index";
-    }
-
-    @RequestMapping(value = "/simulator/internal.html")
-    public String internal() {
-        return "simulator/internal";
-    }
-
     @RequestMapping(value = "/simulator/manageblog.html")
     public String manageblog() {
         return "simulator/manageblog";
@@ -100,15 +136,6 @@ public class SimulatorController {
         return "simulator/newsfeed";
     }
 
-    @RequestMapping(value = "/simulator/notfound.html")
-    public String notfound() {
-        return "simulator/notfound";
-    }
-
-    @RequestMapping(value = "/simulator/offline.html")
-    public String offline() {
-        return "simulator/offline";
-    }
 
     @RequestMapping(value = "/simulator/photo.html")
     public String photo() {
@@ -150,33 +177,10 @@ public class SimulatorController {
         return "simulator/widgets";
     }
 
-    @RequestMapping(value = "/simulator/fileinterface.html")
-    public String fileInterface() {
-        return "simulator/fileinterface";
-    }
-
-    @RequestMapping(value = "/simulator/globalsettings.html")
-    public String globalSettings() {
-        return "simulator/globalsettings";
-    }
-
-    @RequestMapping(value = "/simulator/logmng.html")
-    public String logMng() {
-        return "simulator/logmng";
-    }
-
-    @RequestMapping(value = "/simulator/realtimeinterface.html")
-    public String realTimeInterface() {
-        return "simulator/realtimeinterface";
-    }
-
     @RequestMapping(value = "/simulator/wizard.html")
     public String wizard() {
         return "simulator/wizard";
-    }
+    }*/
 
-    @RequestMapping(value = "/simulator/templateconfig.html")
-    public String templateConfig() {
-        return "simulator/templateconfig";
-    }
+
 }
